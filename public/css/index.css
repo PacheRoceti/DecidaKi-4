@@ -1,0 +1,662 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu';
+}
+
+:root {
+  --cor-texto: #e5e5e5;
+  --cor-fundo: #333333;
+  --cor-links: #31779d;
+  --cinza: #ddd;
+  --nav-bar: #286281;
+}
+
+/* div do cabeçalho */
+.container-cabecalho {
+  position: fixed;
+  top: 0;
+  width: 100%; 
+  z-index: 100;
+}
+
+/* div dentro do cabeçalho */
+.container-cabecalho-menu {
+  background: var(--nav-bar);
+  height: 50px;
+}
+
+/* altera posição dos links */
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding-left: 0px;
+}
+
+/* altera os links em si */
+.txt-menu {
+  list-style: none;
+  margin-left: 3%;
+}
+
+/* altera as palavras dos links */
+.txt-menu a {
+  color: var(--cinza);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.4s;
+}
+
+/* animação cursor dos links */
+.txt-menu a:hover {
+  color: var(--cor-fundo);
+}
+
+/* div do primeiro bg */
+.container-cabecalho-titulo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  background-color: var(--cor-fundo);
+}
+
+/* posição dos primeiros textos  */
+.cabecalho-titulo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 900px;
+  margin-right: 120px;
+  margin-left: 120px;
+  height: auto;
+}
+
+/* muda a cor somente */
+.titulo,
+.subtitulo3 {
+  color: var(--cor-texto);
+}
+
+/* altera o tamnho do título */
+.titulo {
+  font-size: 5rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* altera o primeiro texto */
+.subtitulo3 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
+  color: rgb(176, 176, 176);
+}
+
+/* altera a imagem da logo */
+.foto-logo {
+  width: 60px;
+}
+
+/* altera os containers */
+.container-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--cor-fundo);
+  height: 200px;
+}
+
+.container-cursos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--cinza);
+  position: relative;
+  transition: height 0.5s ease;
+}
+
+
+.container-mat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--cor-fundo);
+  height: 600px;
+}
+
+.container-sobre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--cinza);
+  padding: 40px 0;
+}
+
+.container-team {
+  position: relative;
+  height: 600px;
+  background: var(--cor-fundo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* altera os títulos de cada seção */
+.corpo-titulo .formulario {
+  display: inline-flex;
+  width: 100%;
+  font-size: 2.4em;
+  font-weight: 400;
+  color: var(--cinza);
+  padding-bottom: 20px;
+}
+
+.corpo-titulo .curso {
+  display: inline-flex;
+  width: 100%;
+  font-size: 2em;
+  font-weight: 500;
+  color: var(--cor-fundo);
+  padding-bottom: 40px;
+}
+
+.corpo-titulo .matricula {
+  display: inline-flex;
+  width: 100%;
+  font-size: 2em;
+  font-weight: 500;
+  color: var(--cinza);
+  padding-bottom: 40px;
+}
+
+.sobrenos {
+  font-size: 2em;
+  font-weight: 500;
+  color: var(--cor-fundo);
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.corpo-titulo .equipe {
+  display: inline-flex;
+  width: 100%;
+  font-size: 2em;
+  font-weight: 500;
+  color: var(--cinza);
+  padding-bottom: 40px;
+}
+
+/* altera o botão do formulario */
+.botao-form button {
+  width: 600px;
+  height: 50px;
+  border: none;
+  background-color: var(--cor-links);
+  color: var(--cinza);
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.botao-form button:hover {
+  transform: scale(1.05);
+}
+
+/* altera posição dos cards */
+.corpo-habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+/* altera somente a caixa dos cards */
+.meu-card {
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  height: 279.2px;
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  transition: transform 0.3s ease;
+  background-color: var(--cor-links);
+}
+
+.meu-card:hover {
+  transform: scale(1.05);
+}
+
+.escondido {
+  filter: blur(4px); 
+  pointer-events: none; 
+  max-height: 35px; 
+  overflow: hidden;
+  position: relative;
+  margin-top: 50px; 
+  opacity: 0.5;
+  transition: max-height 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+}
+
+.mostrar {
+  max-height: 600px;
+  opacity: 1;
+  filter: blur(0);
+  pointer-events: auto;
+  overflow: visible;
+  margin-bottom: 30px;
+}
+
+/* altera as imagens dentro dos cards */
+.meu-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* altera o escrito dentro dos cards */
+.card-titulo {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #141414;
+}
+
+/* Altera o botão ver mais */
+.botao-ver-mais {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-ver-mais {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--cor-links);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.btn-ver-mais:hover {
+  transform: scale(1.05);
+}
+
+
+/* Carousel Imagens Projeto */
+.carousel {
+  width: 100%;
+  max-width: 800px;
+}
+
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-caption {
+  background: var(--cor-fundo);
+  border-radius: 5px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: url(../img/SVG/previous.svg);
+  background: var(--cor-links);
+  border-radius: 100%;
+}
+
+.carousel-titulo-imagem {
+  color: var(--cor-texto);
+}
+
+/* Corpo da Página - Sobre Mim */
+.container-texto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* altera o texto sobrenos */
+.texto-sobre-mim {
+  flex: 1;
+  padding: 20px;
+  color: var(--cor-fundo);
+  text-align: justify;
+  font-size: 1rem;
+  border: 1px solid rgb(146, 146, 146);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.bloco-sobre::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgb(146, 146, 146);
+}
+
+.container-texto {
+  width: 100%;
+}
+
+/* altera a imagem do sobre */
+.imagem-sobre {
+  flex: 1;
+  padding: 20px;
+}
+
+.imagem-sobre img {
+  width: 500px;
+  height: 600px;
+  border-radius: 10px;
+  object-fit: cover;
+  background-color: rgb(187, 187, 187);
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.bloco-sobre {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+/* estilização do time */
+
+.team-content {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.container-team::after {
+  display: block;
+  content: "";
+  transform: translateY(80px);
+  width: 95%;
+  height: 1px;
+  background-color: gray;
+}
+
+.team-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.box {
+  padding: 16px;
+  background: var(--cor-links);
+  border-radius: 15px;
+  width: 200px;
+  transition: all 0.38s ease;
+}
+
+.box h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cinza);
+  margin-bottom: 8px;
+}
+
+.box h5 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #141414;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.icones i {
+  display: inline-block;
+  color: var(--cinza);
+  font-size: 15px;
+  margin: 0 8px;
+  transition: all .38s ease;
+}
+
+.icones i:hover {
+  transform: scale(1.2);
+}
+
+.box:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+/* Footer (Rodapé) da página */
+footer {
+  width: 100%;
+  color: var(--cor-texto);
+}
+
+#footer_content {
+  background-color: var(--cor-fundo);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 3rem 3.5rem;
+}
+
+#footer_contacts h1 {
+  margin-bottom: 0.75rem;
+}
+
+#footer_social_media {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+#footer_social_media .footer_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: var(--cor-texto);
+  border-radius: 50%;
+  transition: all 0.4s;
+  text-decoration: none;
+}
+
+#footer_social_media .footer_link i {
+  font-size: 1.25rem;
+}
+
+#footer_social_media .footer_link:hover {
+  opacity: 0.8;
+}
+
+#instagram {
+  background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+.footer_list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.footer_list .footer_link {
+  color: var(--cor-texto);
+  transition: all 0.4s;
+  text-decoration: none;
+}
+
+.footer_list .footer_link:hover {
+  color: var(--cor-links);
+}
+
+#footer_subscribe {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#input_group {
+  display: flex;
+  align-items: center;
+  background-color: var(--cinza);
+  border-radius: 4px;
+}
+
+#input_group input {
+  all: unset;
+  padding: 0.75rem;
+  width: 100%;
+}
+
+#input_group button {
+  background-color: var(--cor-links);
+  border: none;
+  color: var(--cor-texto);
+  padding: 0px 1.5rem;
+  font-size: 1.125rem;
+  height: 100%;
+  border-radius: 0pc 4px 4px 0px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+#input_group button:hover {
+  opacity: 0.8;
+}
+
+#footer_copyrigth {
+  display: flex;
+  justify-content: center;
+  background-color: var(--cor-fundo);
+  font-size: 0.9rem;
+  padding: 1.5rem;
+  font-weight: 100;
+}
+
+.logo2 {
+  width: 100px;
+}
+
+#email {
+  color: var(--cor-fundo);
+}
+
+/* Botão de leitura */
+
+/* acessibilidade à direita */
+.menu-acessibilidade {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+/* estilo dos botões de acessibilidade */
+.menu-acessibilidade button {
+  padding: 5px 10px;
+  background-color: var(--nav-bar);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.menu-acessibilidade button:hover {
+  transform: scale(1.06);
+}
+
+/* Menu Mobile */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 100%;
+  background: var(--nav-bar);
+  padding: 15px;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-menu ul li {
+  margin: 10px 0;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu-acessibilidade-mobile {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Ícone do menu mobile */
+.mobile-menu-icon {
+  display: none;
+}
+
+.mobile-menu-icon button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu-icon .icon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.darkmode--activated .texto-sobre-mim span {
+  color: white;
+}

@@ -1,0 +1,454 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Projeto/public/css/formulario.css">
+    <link rel="stylesheet" href="/Projeto/public/css/media.css">
+    <link rel="shortcut icon" href="/Projeto/public/css/images/Logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+            new Darkmode().showWidget();
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+    <title>Decidaki | A sua plataforma de cursos</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container-cabecalho">
+        <div class="container-cabecalho-menu">
+            <nav id="nav">
+                <a href="javascript:history.back()" class="voltar">
+                    <i class="fa-solid fa-arrow-left-long"></i>
+                </a>
+                <button id="mobile-menu-icon" onclick="menuShow()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <ul id="menu" class="menu">
+                    <li class="txt-menu"><a href="/Projeto/public/index.html"><img class="foto-logo"
+                                src="/Projeto/public/css/images/logo2.png" alt="Logo"></a></li>
+                    <li class="txt-menu"><a href="/Projeto/public/index.html#materia">CURSOS</a></li>
+                    <li class="txt-menu"><a href="/Projeto/public/index.html#projetos">MATRICULA</a></li>
+                    <li class="txt-menu"><a href="/Projeto/public/index.html#sobrenos">SOBRE NÓS</a></li>
+                    <li class="txt-menu"><a href="/Projeto/public/login.html">SAIR</a></li>
+                </ul>
+                <div class="menu-acessibilidade">
+                    <button id="azao" class="azao" aria-label="Aumentar fonte">A+</button>
+                    <button id="azinho" class="azinho" aria-label="Diminuir fonte">A-</button>
+                    <button id="readButton">Audio Descrição</button>
+                </div>
+            </nav>
+            <div id="mobile-menu" class="mobile-menu">
+                <ul>
+                    <li class="txt-menu"><a href="/Projeto/public/index.html#materia">CURSOS</a></li>
+                    <li class="txt-menu"><a href="/Projeto/public/index.html#projetos">MATRICULA</a></li>
+                    <li class="txt-menu"><a href="/Projeto/public/index.html#sobrenos">SOBRE NÓS</a></li>
+                    <li class="txt-menu"><a href="/Projeto/public/login.html">SAIR</a></li>
+                </ul>
+                <div class="menu-acessibilidade-mobile">
+                    <button id="azao" class="azao" aria-label="Aumentar fonte">A+</button>
+                    <button id="azinho" class="azinho" aria-label="Diminuir fonte">A-</button>
+                    <button id="readButton">Audio Descrição</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de escolha de curso -->
+    <div class="modal fade" id="courseModal" tabindex="-1" aria-labelledby="courseModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="courseModalLabel">Escolha seu tipo de curso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Você possui disponibilidade ou preferência para investir em um curso bacharelado (4-5 anos) ou
+                        curso tecnólogo (2-3 anos)?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="courseType" id="bacharelado"
+                            value="bacharelado">
+                        <label class="form-check-label" for="bacharelado">
+                            Bacharelado (4-5 anos)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="courseType" id="tecnologo" value="tecnologo">
+                        <label class="form-check-label" for="tecnologo">
+                            Tecnólogo (2-3 anos)
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="startQuiz()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Questionário de Perguntas</h1>
+
+        <form id="quizForm" class="mb-4">
+            <div id="questions"></div>
+
+            <button type="button" class="btn btn-primary mt-3" onclick="calculateResults()">Enviar
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+
+        <div class="result-overlay" id="resultOverlay">
+            <div class="card" id="resultCard">
+                <div class="card-body">
+                    <button class="close-btn" onclick="closeResults()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <h5 class="card-title text-center">Resultados</h5>
+                    <canvas id="resultChart"></canvas>
+                    <p id="resultText" class="text-center mt-3"></p>
+                    <button id="courseButton" class="btn btn-success mt-3" style="display: none;"
+                        onclick="goToCourse()">Ir para o curso</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const bachareladoQuestions = [
+            {
+                question: "Qual dessas atividades você prefere?",
+                options: {
+                    A: "Resolver problemas matemáticos e lógicos.",
+                    B: "Trabalhar em equipe para criar algo novo.",
+                    C: "Gerenciar projetos e otimizar processos.",
+                    D: "Criar jogos ou aplicativos.",
+                    E: "Trabalhar com dados e sistemas."
+                }
+            },
+            {
+                question: "Como você se sente em relação a programar?",
+                options: {
+                    A: "Adoro! Passaria horas fazendo isso.",
+                    B: "É interessante, mas não é minha prioridade.",
+                    C: "Prefiro outras atividades.",
+                    D: "Gosto, especialmente se for para jogos.",
+                    E: "Tenho curiosidade, mas não sou muito experiente."
+                }
+            },
+            {
+                question: "Você se considera uma pessoa mais:",
+                options: {
+                    A: "Analítica e lógica.",
+                    B: "Criativa e inovadora.",
+                    C: "Organizada e planejadora.",
+                    D: "Prática e dinâmica.",
+                    E: "Detalhista e metódica."
+                }
+            },
+            {
+                question: "Qual dessas áreas mais lhe atrai?",
+                options: {
+                    A: "Tecnologia e desenvolvimento de software.",
+                    B: "Design e criação de experiências.",
+                    C: "Gestão e estratégia empresarial.",
+                    D: "Entretenimento digital e jogos.",
+                    E: "Análise de dados e segurança da informação."
+                }
+            },
+            {
+                question: "Como você lida com desafios?",
+                options: {
+                    A: "Encaro como uma oportunidade para aprender.",
+                    B: "Busco soluções criativas.",
+                    C: "Planejo um passo a passo para resolvê-los.",
+                    D: "Tento abordagens diferentes até encontrar uma solução divertida.",
+                    E: "Análise rigorosa antes de agir."
+                }
+            },
+            {
+                question: "Qual a sua relação com tecnologia?",
+                options: {
+                    A: "Sou apaixonado por inovações tecnológicas.",
+                    B: "Gosto de explorar novos aplicativos e jogos.",
+                    C: "Interesso-me em como a tecnologia pode melhorar processos.",
+                    D: "Adoro criar e experimentar com tecnologia.",
+                    E: "Gosto de entender como funcionam os sistemas."
+                }
+            },
+            {
+                question: "Quando pensa em futuro profissional, você se vê:",
+                options: {
+                    A: "Desenvolvendo software e aplicativos.",
+                    B: "Trabalhando em design de jogos ou produtos.",
+                    C: "Liderando equipes e gerenciando projetos.",
+                    D: "Criando experiências interativas.",
+                    E: "Analisando e protegendo informações."
+                }
+            },
+            {
+                question: "Qual a sua habilidade mais forte?",
+                options: {
+                    A: "Raciocínio lógico e resolução de problemas.",
+                    B: "Criatividade e originalidade.",
+                    C: "Habilidade de liderança e organização.",
+                    D: "Capacidade de criar e desenvolver jogos.",
+                    E: "Análise crítica e atenção aos detalhes."
+                }
+            },
+            {
+                question: "O que mais valoriza em um trabalho?",
+                options: {
+                    A: "Desafios intelectuais e técnicos.",
+                    B: "Liberdade criativa e inovação.",
+                    C: "Estabilidade e crescimento profissional.",
+                    D: "Diversão e envolvimento em projetos interessantes.",
+                    E: "Segurança e precisão na informação."
+                }
+            },
+            {
+                question: "Como você prefere aprender?",
+                options: {
+                    A: "Através de cursos e tutoriais online.",
+                    B: "Experimentando e criando projetos.",
+                    C: "Com orientações de mentores e experiências práticas.",
+                    D: "Participando de hackathons ou competições.",
+                    E: "Estudando teorias e práticas estabelecidas."
+                }
+            }
+        ];
+
+        const tecnologoQuestions = [
+            {
+                question: "Qual dessas atividades você prefere?",
+                options: {
+                    A: "Desenvolver aplicativos ou sistemas.",
+                    B: "Gerenciar equipes e projetos de tecnologia.",
+                    C: "Criar jogos ou experiências digitais.",
+                    D: "Trabalhar com infraestrutura de redes.",
+                    E: "Desenvolver sites e aplicações web."
+                }
+            },
+            {
+                question: "Como você se sente em relação à programação?",
+                options: {
+                    A: "Gosto muito e me divirto criando códigos.",
+                    B: "É interessante, mas prefiro gerenciar ao invés de programar.",
+                    C: "Adoro criar jogos, programar é parte da diversão.",
+                    D: "Tenho interesse, mas prefiro focar em redes.",
+                    E: "Gosto de programar para a web."
+                }
+            },
+            {
+                question: "Você se considera uma pessoa mais:",
+                options: {
+                    A: "Analítica e lógica.",
+                    B: "Criativa e inovadora.",
+                    C: "Organizada e planejadora.",
+                    D: "Prática e dinâmica.",
+                    E: "Detalhista e metódica."
+                }
+            },
+            {
+                question: "Qual dessas áreas mais lhe atrai?",
+                options: {
+                    A: "Tecnologia e desenvolvimento de software.",
+                    B: "Design e criação de experiências.",
+                    C: "Gestão e estratégia empresarial.",
+                    D: "Entretenimento digital e jogos.",
+                    E: "Análise de dados e segurança da informação."
+                }
+            },
+            {
+                question: "Como você lida com desafios?",
+                options: {
+                    A: "Encaro como uma oportunidade para aprender.",
+                    B: "Busco soluções criativas.",
+                    C: "Planejo um passo a passo para resolvê-los.",
+                    D: "Tento abordagens diferentes até encontrar uma solução divertida.",
+                    E: "Análise rigorosa antes de agir."
+                }
+            },
+            {
+                question: "Qual a sua relação com tecnologia?",
+                options: {
+                    A: "Sou apaixonado por inovações tecnológicas.",
+                    B: "Gosto de explorar novos aplicativos e jogos.",
+                    C: "Interesso-me em como a tecnologia pode melhorar processos.",
+                    D: "Adoro criar e experimentar com tecnologia.",
+                    E: "Gosto de entender como funcionam os sistemas."
+                }
+            },
+            {
+                question: "Quando pensa em futuro profissional, você se vê:",
+                options: {
+                    A: "Desenvolvendo software e aplicativos.",
+                    B: "Trabalhando em design de jogos ou produtos.",
+                    C: "Liderando equipes e gerenciando projetos.",
+                    D: "Criando experiências interativas.",
+                    E: "Analisando e protegendo informações."
+                }
+            },
+            {
+                question: "Qual a sua habilidade mais forte?",
+                options: {
+                    A: "Raciocínio lógico e resolução de problemas.",
+                    B: "Criatividade e originalidade.",
+                    C: "Habilidade de liderança e organização.",
+                    D: "Capacidade de criar e desenvolver jogos.",
+                    E: "Análise crítica e atenção aos detalhes."
+                }
+            },
+            {
+                question: "O que mais valoriza em um trabalho?",
+                options: {
+                    A: "Desafios intelectuais e técnicos.",
+                    B: "Liberdade criativa e inovação.",
+                    C: "Estabilidade e crescimento profissional.",
+                    D: "Diversão e envolvimento em projetos interessantes.",
+                    E: "Segurança e precisão na informação."
+                }
+            },
+            {
+                question: "Como você prefere aprender?",
+                options: {
+                    A: "Através de cursos e tutoriais online.",
+                    B: "Experimentando e criando projetos.",
+                    C: "Com orientações de mentores e experiências práticas.",
+                    D: "Participando de hackathons ou competições.",
+                    E: "Estudando teorias e práticas estabelecidas."
+                }
+            }
+        ];
+
+        let selectedCourseType = null;
+        let chart;
+
+        const generateQuestions = () => {
+            const questionsDiv = document.getElementById('questions');
+            questionsDiv.innerHTML = '';
+            const questions = selectedCourseType === 'bacharelado' ? bachareladoQuestions : tecnologoQuestions;
+
+            questions.forEach((questionData, index) => {
+                let optionsHTML = '';
+                Object.entries(questionData.options).forEach(([key, value]) => {
+                    optionsHTML += `<option value="${key}">${value}</option>`;
+                });
+
+                const questionHTML = `
+          <div class="mb-3">
+            <label class="form-label">${index + 1}. ${questionData.question}</label>
+            <select class="form-select" name="question${index + 1}">
+              ${optionsHTML}
+            </select>
+          </div>`;
+                questionsDiv.innerHTML += questionHTML;
+            });
+        };
+
+        const startQuiz = () => {
+            selectedCourseType = document.querySelector('input[name="courseType"]:checked').value;
+            generateQuestions();
+            const modal = bootstrap.Modal.getInstance(document.getElementById('courseModal'));
+            modal.hide();
+        };
+
+        const calculateResults = () => {
+            const form = document.getElementById('quizForm');
+            const formData = new FormData(form);
+            const counts = { A: 0, B: 0, C: 0, D: 0, E: 0 };
+
+            formData.forEach((value) => {
+                counts[value]++;
+            });
+
+            const total = selectedCourseType === 'bacharelado' ? bachareladoQuestions.length : tecnologoQuestions.length;
+            const percentages = [
+                (counts.A / total * 100).toFixed(2),
+                (counts.B / total * 100).toFixed(2),
+                (counts.C / total * 100).toFixed(2),
+                (counts.D / total * 100).toFixed(2),
+                (counts.E / total * 100).toFixed(2)
+            ];
+
+            document.getElementById('resultOverlay').style.display = 'flex';
+
+            const courseLabels = selectedCourseType === 'bacharelado'
+                ? ['Ciência da Computação', 'Jogos Digitais', 'Engenharia de Produção', 'Engenharia da Computação', 'Sistemas de Informação']
+                : ['Análise e Desenvolvimento de Sistemas', 'Gestão da TI', 'Jogos Digitais', 'Redes de Computadores', 'Sistemas para Internet'];
+
+            document.getElementById('resultOverlay').style.display = 'flex';
+
+            const ctx = document.getElementById('resultChart').getContext('2d');
+
+            if (chart) {
+                chart.data.labels = courseLabels;
+                chart.data.datasets[0].data = percentages;
+                chart.update();
+            } else {
+                chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: courseLabels,
+                        datasets: [{
+                            label: 'Porcentagem',
+                            data: percentages,
+                            backgroundColor: ['#ff6384', '#36a2eb', '#cc65fe', '#ffce56', '#4bc0c0']
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+
+        };
+
+        const closeResults = () => {
+            document.getElementById('resultOverlay').style.display = 'none';
+        };
+
+        window.onload = () => {
+            const courseModal = new bootstrap.Modal(document.getElementById('courseModal'));
+            courseModal.show();
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Script -->
+    <script>
+        function addDarkmodeWidget() {
+            new Darkmode().showWidget();
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!-- Chamadas dos Scripts -->
+    <script src="/Projeto/public/js/verificaconectado.js"></script>
+    <script src="/Projeto/public/js/ajusteFonte.js"></script>
+    <script src="/Projeto/public/js/audioDescricao.js"></script>
+    <script src="/Projeto/public/js/responsividade.js"></script>
+</body>
+</html>

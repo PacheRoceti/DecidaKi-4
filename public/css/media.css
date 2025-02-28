@@ -1,0 +1,443 @@
+/* Media Query Desktop = 1100px*/
+@media screen and (max-width: 1440px) {
+  /* cabeçalho */
+
+  .container-cabecalho-titulo {
+    height: 400px;
+  }
+
+  .cabecalho-titulo {
+    width: 600px;
+  }
+
+  .titulo {
+    font-size: 3.5rem;
+  }
+
+  .subtitulo {
+    font-size: 2rem;
+  }
+
+  .subtitulo3,
+  .links {
+    font-size: 0.9rem;
+  }
+
+  .foto-perfil {
+    width: 90%;
+  }
+
+  .texto-sobre-mim {
+    max-width: 75%;
+  }
+
+  .container-team {
+    height: 800px;
+  }
+
+  .team-content {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .container-team::after {
+    display: none;
+  }
+
+}
+
+/* Media Query Desktop = 1010px*/
+@media screen and (max-width: 1024px) {
+
+  .corpo-habilidades .svg {
+    width: 110px;
+  }
+
+  .corpo-habilidades span {
+    font-size: 0.9rem;
+  }
+
+  .corpo-habilidades {
+    justify-content: center;
+  }
+
+  .meu-card {
+    width: 15%;
+    height: 210px;
+  }
+
+  .carousel {
+    max-width: 640px;
+  }
+
+  .texto-sobre-mim {
+    font-size: 1rem;
+  }
+
+  .team-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .imagem-sobre img {
+    width: 400px;
+    height: 500px;
+  }
+
+  /* Rodapé */
+  label {
+    font-size: 0.9rem;
+  }
+
+  #mensagem {
+    height: 20%;
+    resize: none;
+  }
+
+  .container-formulario {
+    height: 360px;
+  }
+
+  .container-team::after {
+    display: none;
+  }
+}
+
+/* Media Query Tablet = 830px*/
+@media screen and (max-width: 830px) {
+  .cabecalho-titulo {
+    width: 390px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  .titulo {
+    font-size: 2.9rem;
+  }
+
+  .subtitulo {
+    font-size: 1.7rem;
+  }
+
+  .subtitulo3,
+  .links {
+    font-size: 0.8rem;
+  }
+
+  .foto-perfil {
+    width: 80%;
+  }
+
+  .botao-form button {
+    width: 300px;
+  }
+
+  /* Corpo */
+  .corpo-titulo .curso {
+    font-size: 1.8rem;
+    padding-bottom: 20px;
+  }
+
+  .corpo-titulo .matricula {
+    font-size: 1.8rem;
+    padding-bottom: 20px;
+  }
+
+  .corpo-titulo .sobrenos {
+    font-size: 1.8rem;
+    padding-bottom: 20px;
+  }
+
+  .texto-sobre-mim {
+    max-width: 550px;
+    margin-left: 10px;
+  }
+
+  .box {
+    width: 150px;
+  }
+
+  .corpo-habilidades span {
+    font-size: 0.7rem
+  }
+
+  .carousel-item img {
+    height: 300px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu-acessibilidade {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+}
+
+/* Media Query Tablet = 690px*/
+@media screen and (max-width: 690px) {
+
+  /* Cabeçalho */
+  .menu {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .container-cabecalho-titulo {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cabecalho-titulo {
+    align-items: center;
+    width: 360px;
+    margin: 0px;
+  }
+
+  .titulo {
+    margin-top: 20px;
+    font-size: 2.5rem;
+  }
+
+  .subtitulo {
+    font-size: 1.4rem;
+  }
+
+  .subtitulo3,
+  .links {
+    font-size: 0.9rem;
+  }
+
+  .foto-perfil {
+    width: 65%;
+  }
+
+  .corpo-titulo .curso {
+    font-size: 1rem;
+    padding-bottom: 20px;
+  }
+
+  .corpo-titulo .matricula {
+    font-size: 1.3rem;
+    padding-bottom: 20px;
+  }
+
+  .corpo-titulo .sobrenos {
+    font-size: 1.3rem;
+    padding-bottom: 20px;
+  }
+
+  .corpo-habilidades {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* Para quebrar linha se necessário */
+    justify-content: center;
+    gap: 10px;
+    /* Espaço entre os cards */
+  }
+
+  .corpo-habilidades .svg {
+    width: 100%;
+  }
+
+  .corpo-habilidades span {
+    font-size: 0.8rem;
+  }
+
+  .meu-card {
+    width: 30%;
+    /* Ajusta a largura para caber dois cards */
+    margin-bottom: 10px;
+  }
+
+  .texto-sobre-mim {
+    margin-left: 0px;
+  }
+
+  .imagem-sobre img {
+    height: 300px;
+    width: 300px;
+  }
+
+  .bloco-sobre {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Corpo */
+
+  #footer_content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+
+/* Media Query Tablet = 590px*/
+@media screen and (max-width: 590px) {
+
+  /* Cabeçalho */
+  .txt-menu a {
+    font-size: 0.85rem;
+  }
+
+  .corpo-titulo .formulario {
+    font-size: 1.5rem;
+  }
+
+  .corpo-habilidades span {
+    font-size: 0.7rem;
+  }
+
+  /* Corpo */
+  .carousel {
+    max-width: 100%;
+  }
+
+  .texto-sobre-mim {
+    max-width: 95%;
+  }
+
+  .team-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .box {
+    width: 100px;
+  }
+
+  .container-team {
+    height: 1000px;
+
+  }
+
+  .corpo-titulo .equipe {
+    font-size: 1.5rem;
+  }
+}
+
+/* Media Query Celular = 490px*/
+@media screen and (max-width: 490px) {
+
+  /* Cabeçalho */
+  .menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    top: 50px;
+    right: auto;
+    left: auto;
+    background: var(--cor-fundo);
+    z-index: 1000;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    transition: 0.6s;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+
+  .txt-menu {
+    padding: 1rem 0px;
+  }
+
+  #nav {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #nav.ativo .menu {
+    height: calc(100vh - 50px);
+    visibility: visible;
+  }
+
+  .container-cabecalho-titulo {
+    height: 570px;
+  }
+
+  .foto-perfil {
+    width: 45%;
+  }
+
+  .cabecalho-titulo {
+    width: 300px;
+  }
+
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .subtitulo {
+    font-size: 1.18rem;
+  }
+
+  .subtitulo2 {
+    text-align: center;
+  }
+
+  .subtitulo2,
+  .subtitulo3,
+  .links {
+    font-size: 0.9rem;
+  }
+
+  .cabecalho-links {
+    justify-content: space-evenly;
+  }
+
+  .cabecalho-links a {
+    padding: 0px 10px 10px 0px;
+  }
+
+  .team-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container-team {
+    height: 1200px;
+
+  }
+
+  .corpo-titulo .equipe {
+    font-size: 1rem;
+  }
+
+  .corpo-habilidades span {
+    font-size: 0.6rem;
+  }
+
+  /* Corpo */
+  .texto-sobre-mim {
+    max-width: 90%;
+    font-size: 0.9rem;
+  }
+
+  /* Rodapé */
+
+  #footer_content {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 3rem 2rem;
+  }
+
+}
+
+/* Media Query Celular = 360px*/
+@media screen and (max-width: 360px) {
+
+  /* Corpo */
+  .corpo-habilidades {
+    width: 100%;
+  }
+}

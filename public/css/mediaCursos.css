@@ -1,0 +1,94 @@
+/* Breakpoints */
+@media (max-width: 1440px) {
+ 
+
+}
+
+@media (max-width: 1024px) {
+
+    .fixo {
+        width: 300px;
+        left: 60px;
+    }
+
+    .corpo {
+        margin-left: 400px;
+    }
+
+    label {
+        font-size: 0.9rem;
+      }
+    
+      #mensagem {
+        height: 20%;
+        resize: none;
+      }
+    
+      .container-formulario {
+        height: 360px;
+      }
+    
+      .container-team::after {
+        display: none;
+      }
+
+}
+
+@media (max-width: 830px) {
+
+    .fixo {
+        width: 200px;
+        left: 40px;
+    }
+
+    .txt-curso {
+        font-size: large;
+    }
+
+    .corpo {
+        margin-left: 250px;
+    }
+
+    #mobile-menu-icon {
+        display: block; /* Exibe o botão do menu mobile */
+      }
+    
+      .menu, .menu-acessibilidade {
+        display: none; /* Oculta a nav-bar completa */
+      }
+    
+      .mobile-menu {
+        display: none; /* O menu mobile continua oculto até que o botão seja clicado */
+      }
+
+}
+
+@media (max-width: 690px) {
+    
+    .fixo {
+        display: none;
+    }
+
+    .corpo {
+        margin-left: 20px;
+    }
+
+    .bloco {
+        width: 100%;
+    }
+
+    #footer_content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+}
+
+@media (max-width: 490px) {
+
+    #footer_content {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 3rem 2rem;
+      }
+
+}

@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu';
+  }
+  
+  :root {
+    --cor-texto: #e5e5e5;
+    --cor-fundo: #333333;
+    --cor-links: #31779d;
+    --cinza: #ddd;
+    --nav-bar: #286281;
+  }
+  
+  /* div do cabeçalho */
+  .container-cabecalho {
+    position: fixed;
+    top: 0;
+    width: 100%; 
+    z-index: 100;
+  }
+  
+  /* div dentro do cabeçalho */
+  .container-cabecalho-menu {
+    background: var(--nav-bar);
+    height: 50px;
+  }
+  
+  /* altera posição dos links */
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding-left: 0px;
+  }
+  
+  /* altera os links em si */
+  .txt-menu {
+    list-style: none;
+    margin-left: 3%;
+  }
+  
+  /* altera as palavras dos links */
+  .txt-menu a {
+    color: var(--cinza);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.4s;
+  }
+  
+  /* animação cursor dos links */
+  .txt-menu a:hover {
+    color: var(--cor-fundo);
+  }
+
+  /* altera a imagem da logo */
+.foto-logo {
+    width: 60px;
+  }
+
+  /* botão de voltar */
+
+  .voltar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    margin-left: 20px; /* Adiciona margem à esquerda */
+    color: var(--cinza);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .voltar:hover {
+    color: var(--cor-fundo);
+  }
+  
+  #nav {
+    display: flex;
+    align-items: center;
+  }
+  
+
+  /* modifica a junção dos conteudos da class "fixo" e "corpo" */
+  .tudo {
+    display: flex;
+    margin-top: 50px; 
+  }
+  
+  .fixo {
+    position: fixed;
+    left: 100px; /* Espaço da borda esquerda */
+    top: 120px; /* Ajusta a posição em relação ao topo da página */
+    width: 400px; /* Largura da seção fixa */
+    background-color: #f0f0f0; /* Cor de fundo */
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .txt-curso {
+    font-size: x-large;
+    font-weight: 500;
+  }
+  
+  .corpo {
+    margin-left: 500px;
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto; /* Permite que o conteúdo seja rolado */
+  }
+  
+  .bloco {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 90%;
+  }
+  
+  .titulo h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+
+  .texto {
+    text-align: justify; /* Garante que todo o conteúdo da classe "texto" será justificado */
+  }
+
+  .texto span {
+    font-size: 1rem;
+    line-height: 1.4; /* Reduz o espaçamento entre linhas */
+    color: #333;
+  }
+
+  /* Footer (Rodapé) da página */
+footer {
+  width: 100%;
+  color: var(--cor-texto);
+}
+
+#footer_content {
+  background-color: var(--cor-fundo);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 3rem 3.5rem;
+}
+
+#footer_contacts h1 {
+  margin-bottom: 0.75rem;
+}
+
+#footer_social_media {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+#footer_social_media .footer_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: var(--cor-texto);
+  border-radius: 50%;
+  transition: all 0.4s;
+  text-decoration: none;
+}
+
+#footer_social_media .footer_link i {
+  font-size: 1.25rem;
+}
+
+#footer_social_media .footer_link:hover {
+  opacity: 0.8;
+}
+
+#instagram {
+  background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+.footer_list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.footer_list .footer_link {
+  color: var(--cor-texto);
+  transition: all 0.4s;
+  text-decoration: none;
+}
+
+.footer_list .footer_link:hover {
+  color: var(--cor-links);
+}
+
+#footer_subscribe {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#input_group {
+  display: flex;
+  align-items: center;
+  background-color: var(--cinza);
+  border-radius: 4px;
+}
+
+#input_group input {
+  all: unset;
+  padding: 0.75rem;
+  width: 100%;
+}
+
+#input_group button {
+  background-color: var(--cor-links);
+  border: none;
+  color: var(--cor-texto);
+  padding: 0px 1.5rem;
+  font-size: 1.125rem;
+  height: 100%;
+  border-radius: 0pc 4px 4px 0px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+#input_group button:hover {
+  opacity: 0.8;
+}
+
+#footer_copyrigth {
+  display: flex;
+  justify-content: center;
+  background-color: var(--cor-fundo);
+  font-size: 0.9rem;
+  padding: 1.5rem;
+  font-weight: 100;
+}
+
+.logo2 {
+  width: 100px;
+}
+
+#email {
+  color: var(--cor-fundo);
+}
+
+/* acessibilidade à direita */
+.menu-acessibilidade {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+/* estilo dos botões de acessibilidade */
+.menu-acessibilidade button {
+  padding: 5px 10px;
+  background-color: var(--nav-bar);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.menu-acessibilidade button:hover {
+  transform: scale(1.06);
+}
+
+/* Menu Mobile */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 100%;
+  background: var(--nav-bar);
+  padding: 15px;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-menu ul li {
+  margin: 10px 0;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu-acessibilidade-mobile {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Ícone do menu mobile */
+.mobile-menu-icon {
+  display: none;
+}
+
+.mobile-menu-icon button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#mobile-menu-icon {
+  display: none; 
+  font-size: 2rem; 
+  color: var(--cinza); 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  position: absolute; 
+  right: 10px; 
+  top: 50%; 
+  transform: translateY(-50%); 
+}   

@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu';
+}
+
+:root {
+    --cor-texto: #e5e5e5;
+    --cor-fundo: #333333;
+    --cor-links: #31779d;
+    --cinza: #ddd;
+    --nav-bar: #286281;
+}
+
+body {
+    background-color: var(--cinza);
+  }
+
+/* div do cabeçalho */
+.container-cabecalho {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* div dentro do cabeçalho */
+.container-cabecalho-menu {
+    background: var(--nav-bar);
+    height: 50px;
+}
+
+/* altera posição dos links */
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    padding-left: 0px;
+}
+
+/* altera os links em si */
+.txt-menu {
+    list-style: none;
+    margin-left: 3%;
+}
+
+/* altera as palavras dos links */
+.txt-menu a {
+    color: var(--cinza);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.4s;
+}
+
+/* animação cursor dos links */
+.txt-menu a:hover {
+    color: var(--cor-fundo);
+}
+
+/* altera a imagem da logo */
+.foto-logo {
+    width: 60px;
+}
+
+/* botão de voltar */
+
+.voltar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    margin-left: 20px;
+    /* Adiciona margem à esquerda */
+    color: var(--cinza);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.voltar:hover {
+    color: var(--cor-fundo);
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+}
+
+/* acessibilidade à direita */
+.menu-acessibilidade {
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+/* estilo dos botões de acessibilidade */
+.menu-acessibilidade button {
+    padding: 5px 10px;
+    background-color: var(--nav-bar);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    transition: all 0.3s;
+}
+
+.menu-acessibilidade button:hover {
+    transform: scale(1.06);
+}
+
+/* Menu Mobile */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    background: var(--nav-bar);
+    padding: 15px;
+}
+
+.mobile-menu.open {
+    display: flex;
+}
+
+.mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+}
+
+.mobile-menu ul li {
+    margin: 10px 0;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu-acessibilidade-mobile {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Ícone do menu mobile */
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu-icon button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#mobile-menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: var(--cinza);
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.result-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+#resultCard {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    margin: 20px;
+    background: var(--cinza);
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    animation: scaleUp 0.3s ease forwards;
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: var(--cor-fundo);
+    /* Tom principal vibrante */
+    color: var(--cinza);
+    /* Contraste do texto */
+    padding: 1rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--cor-fundo);
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #ff3860;
+}
+
+.btn-primary {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    /* Botões arredondados */
+}
+
+.btn-primary:hover {
+    background-color: var(--cor-fundo);
+    /* Cor de destaque */
+    transform: translateY(-2px);
+}
+
+canvas {
+    margin-top: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.option-icon {
+    margin-right: 8px;
+    color: #6c757d;
+    /* Tom neutro */
+}
+
+.form-select {
+    border: 1px solid #ced4da;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: var(--cor-links);
+    /* Fundo claro */
+}
+
+.form-select:focus {
+    border-color: var(--cor-fundo);
+    box-shadow: 0 0 0 0.25rem rgba(46, 196, 182, 0.25);
+}

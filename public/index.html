@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="/Projeto/public/css/index.css">
+  <link rel="stylesheet" href="/Projeto/public/css/media.css">
+  <link rel="shortcut icon" href="/Projeto/public/css/images/Logo2.png" type="image/x-icon">
+  <link rel="stylesheet" href="/Projeto/public/css/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+  <title>Decidaki | A sua plataforma de cursos</title>
+</head>
+
+<body>
+  <header>
+
+    <header>
+      <div class="container-cabecalho">
+        <div class="container-cabecalho-menu">
+          <nav id="nav">
+            <div class="nav-list">
+              <ul id="menu" class="menu">
+                <li class="txt-menu"><a href="/Projeto/public/index.html"><img class="foto-logo"
+                      src="/Projeto/public/css/images/logo2.png" alt="foto perfil"></a></li>
+                <li class="txt-menu"><a href="/Projeto/public/index.html#materia">CURSOS</a></li>
+                <li class="txt-menu"><a href="/Projeto/public/index.html#projetos">MATRICULA</a></li>
+                <li class="txt-menu"><a href="/Projeto/public/index.html#sobrenos">SOBRE NÓS</a></li>
+                <li class="txt-menu"><a href="/Projeto/public/login.html">SAIR</a></li>
+              </ul>
+            </div>
+            <div class="menu-acessibilidade">
+              <button id="azao" class="azao" aria-label="Aumentar fonte">A+</button>
+              <button id="azinho" class="azinho" aria-label="Diminuir fonte">A-</button>
+              <button id="readButton">Audio Descrição</button>
+            </div>
+            <div class="mobile-menu-icon">
+              <button onclick="menuShow()">
+                <i class="fa-solid fa-bars icon"></i>
+              </button>
+            </div>
+          </nav>
+          <div class="mobile-menu">
+            <ul>
+              <li class="txt-menu"><a href="/Projeto/public/index.html#materia">CURSOS</a></li>
+              <li class="txt-menu"><a href="/Projeto/public/index.html#projetos">MATRICULA</a></li>
+              <li class="txt-menu"><a href="/Projeto/public/index.html#sobrenos">SOBRE NÓS</a></li>
+              <li class="txt-menu"><a href="/Projeto/public/login.html">SAIR</a></li>
+            </ul>
+            <div class="menu-acessibilidade-mobile">
+              <button id="azao" class="azao" aria-label="Aumentar fonte">A+</button>
+              <button id="azinho" class="azinho" aria-label="Diminuir fonte">A-</button>
+              <button id="readButton">Audio Descrição</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    
+    
+
+    <div class="container-cabecalho-titulo">
+      <div class="cabecalho-titulo">
+        <h1 class="titulo">Decida aqui o melhor curso de TI!</h1>
+        <p class="subtitulo3">Aqui você descobre o curso de tecnologia que tem mais a sua cara.</p>
+      </div>
+    </div>
+
+    <div class="container-form">
+      <div class="corpo-titulo">
+        <span class="formulario">Faça aqui seu teste vocacional!</span>
+      </div>
+
+      <div class="botao-form">
+        <button onclick="window.location.href='./telas/formulario.html'">COMEÇAR AGORA</button>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container-cursos">
+      <div class="corpo-titulo">
+        <span id="materia" class="curso">Qual curso gostaria de conhecer?</span>
+      </div>
+
+      <div class="corpo-habilidades">
+        <div class="meu-card">
+          <a class="teste" href="/Projeto/public/telas/cdc.html">
+            <img class="svg" src="/Projeto/public/css/images/Ciência da Computação.png" alt="Ciencias da computação">
+          </a>
+          <span class="card-titulo">Ciências da Computação</span>
+        </div>
+
+        <div class="meu-card">
+          <a class="teste" href="/Projeto/public/telas/sdi.html">
+            <img class="svg" src="/Projeto/public/css/images/Sistemas de Informação.png" alt="Sistemas da informação">
+          </a>
+          <span class="card-titulo">Sistemas da Informação</span>
+        </div>
+
+        <div class="meu-card">
+          <a class="teste" href="/Projeto/public/telas/ads.html">
+            <img class="svg" src="/Projeto/public/css/images/ADS.png" alt="ADS">
+          </a>
+          <span class="card-titulo">Análise e Desenvolvimento de Sistemas</span>
+        </div>
+
+        <div class="meu-card">
+          <a class="teste" href="/Projeto/public/telas/rdc.html">
+            <img class="svg" src="/Projeto/public/css/images/Redes.png" alt="Redes">
+          </a>
+          <span class="card-titulo">Redes de Computadores</span>
+        </div>
+
+        <div class="meu-card">
+          <a class="teste" href="/Projeto/public/telas/edc.html">
+            <img class="svg" src="/Projeto/public/css/images/Engenharia da Computação.png"
+              alt="Engenharia da computação">
+          </a>
+          <span class="card-titulo">Engenharia da Computação</span>
+        </div>
+      </div>
+
+      <div class="corpo-habilidades escondido">
+        <div class="meu-card">
+          <a class="teste" href="/Projeto/public/telas/tjd.html">
+            <img class="svg" src="/Projeto/public/css/images/Tecnologia em Jogos Digitais.png"
+              alt="Tecnologia em Jogos Digitais">
+          </a>
+          <span class="card-titulo">Tecnologia em Jogos Digitais</span>
+        </div>
+
+        <div class="meu-card">
+          <a class="teste" href="/Projeto/public/telas/spi.html">
+            <img class="svg" src="/Projeto/public/css/images/Sistemas para Internet.png" alt="Sistemas para Internet">
+          </a>
+          <span class="card-titulo">Sistemas para Internet</span>
+        </div>
+
+        <div class="meu-card">
+          <a class="teste" href="/Projeto/public/telas/gdt.html">
+            <img class="svg" src="/Projeto/public/css/images/Gestão da Tecnologia da Informação.png"
+              alt="Gestão da Tecnologia da Informação">
+          </a>
+          <span class="card-titulo">Gestão da Tecnologia da Informação</span>
+        </div>
+
+        <div class="meu-card">
+          <a class="teste" href="/Projeto/public/telas/edp.html">
+            <img class="svg" src="/Projeto/public/css/images/Engenharia de Produção.png" alt="Engenharia de Produção">
+          </a>
+          <span class="card-titulo">Engenharia de Produção</span>
+        </div>
+
+        <div class="meu-card">
+          <a class="teste" href="/Projeto/public/telas/bjd.html">
+            <img class="svg" src="/Projeto/public/css/images/Bacharelado de Jogos Digitais.png"
+              alt="Bacharelado de Jogos Digitais">
+          </a>
+          <span class="card-titulo">Bacharelado de Jogos Digitais</span>
+        </div>
+      </div>
+
+      <div class="botao-ver-mais">
+        <button class="btn-ver-mais" onclick="mostrarMais()">Ver mais</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container-mat">
+      <div class="corpo-titulo">
+        <span id="projetos" class="matricula">Faça sua matricula!</span>
+      </div>
+
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+            aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+            aria-label="Slide 6"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"
+            aria-label="Slide 7"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7"
+            aria-label="Slide 8"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8"
+            aria-label="Slide 9"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="9"
+            aria-label="Slide 10"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="https://www.sp.senac.br/graduacao/bacharelado-em-ciencia-da-computacao" target="_blank">
+              <img src="/Projeto/public/css/images/carrosel/Ciencia-da-Computacao.jpg" class="d-block w-100">
+            </a>
+
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="carousel-titulo-imagem">Ciências da Computação</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <a href="https://www.sp.senac.br/graduacao/bacharelado-em-sistemas-de-informacao" target="_blank">
+              <img src="/Projeto/public/css/images/carrosel/sistemas da informacao.jpg" class="d-block w-100"
+                alt="imagem página consumo de kw">
+            </a>
+
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="carousel-titulo-imagem">Sistemas da Informação</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <a href="https://www.sp.senac.br/graduacao/tecnologia-em-redes-de-computadores" target="_blank">
+              <img src="/Projeto/public/css/images/carrosel/Redes.jpg" class="d-block w-100">
+            </a>
+
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="carousel-titulo-imagem">Redes de Computadores</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <a href="https://www.sp.senac.br/graduacao/bacharelado-em-engenharia-de-computacao" target="_blank">
+              <img src="/Projeto/public/css/images/carrosel/engenharia.jpg" class="d-block w-100">
+            </a>
+
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="carousel-titulo-imagem">Engenharia da Computação</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <a href="https://www.sp.senac.br/graduacao/tecnologia-em-analise-e-desenvolvimento-de-sistemas"
+              target="_blank">
+              <img src="/Projeto/public/css/images/carrosel/ads.jpg" class="d-block w-100">
+            </a>
+
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="carousel-titulo-imagem">Análise e Desenvolvimento de Sistemas</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <a href="https://www.sp.senac.br/graduacao/tecnologia-em-jogos-digitais" target="_blank">
+              <img src="/Projeto/public/css/images/carrosel/estudante de jogos digitais tecnologo.png"
+                class="d-block w-100">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="carousel-titulo-imagem">Tecnologia em Jogos Digitais</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <a href="https://www.sp.senac.br/graduacao/tecnologia-em-sistemas-para-internet" target="_blank">
+              <img src="/Projeto/public/css/images/carrosel/estudante sistemas para internet.jpg" class="d-block w-100">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="carousel-titulo-imagem">Sistemas para Internet</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <a href="https://www.sp.senac.br/graduacao/tecnologia-em-gestao-da-tecnologia-da-informacao"
+              target="_blank">
+              <img src="/Projeto/public/css/images/carrosel/estudante getsao de ti.jpeg" class="d-block w-100">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="carousel-titulo-imagem">Gestão da Tecnologia da Informação</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <a href="https://www.sp.senac.br/graduacao/bacharelado-em-engenharia-de-producao" target="_blank">
+              <img src="/Projeto/public/css/images/carrosel/estudante engenharia de producao.jpeg"
+                class="d-block w-100">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="carousel-titulo-imagem">Engenharia de Produção</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <a href="https://www.sp.senac.br/graduacao/bacharelado-em-jogos-digitais" target="_blank">
+              <img src="/Projeto/public/css/images/carrosel/estudante de jogos digitais bacharel.jpeg"
+                class="d-block w-100">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="carousel-titulo-imagem">Bacharelado de Jogos Digitais</h5>
+            </div>
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-sobre">
+      <div class="corpo-titulo">
+        <span id="sobrenos" class="sobrenos">Sobre Nós</span>
+      </div>
+
+      <div class="container-texto">
+        <div class="bloco-sobre">
+          <div class="texto-sobre-mim">
+            <span>
+              No DecidaKi, acreditamos que aprender sobre tecnologia pode ser simples e direto. Criamos uma plataforma
+              para facilitar sua escolha entre áreas como Ciência da Computação, Sistemas de Informação, Redes,
+              Engenharia de Computação e muito mais.
+            </span>
+          </div>
+          <div class="imagem-sobre">
+            <img src="./css/images/SVG/img-01-sobre.svg" alt="Estudantes de tecnologia">
+          </div>
+        </div>
+
+        <div class="bloco-sobre">
+          <div class="imagem-sobre">
+            <img src="./css/images/SVG/img-02-sobre.svg" alt="Ambiente de estudo tecnológico">
+          </div>
+          <div class="texto-sobre-mim">
+            <span>
+              Nosso foco é ajudar você a descobrir suas habilidades e escolher a área certa para começar ou avançar na
+              carreira de tecnologia. Estamos aqui para tornar essa jornada mais fácil e cheia de oportunidades!
+            </span>
+          </div>
+        </div>
+
+        <div class="bloco-sobre">
+          <div class="texto-sobre-mim">
+            <span>
+              Queremos que você entenda o que cada área oferece para que possa escolher o caminho que mais combina com
+              seus
+              interesses. Explore nossas opções e decida seu futuro na tecnologia aqui!
+            </span>
+          </div>
+          <div class="imagem-sobre">
+            <img src="./css/images/SVG/img-03-sobre.svg" alt="Orientação sobre carreira tecnológica">
+          </div>
+        </div>
+
+        <div class="bloco-sobre">
+          <div class="imagem-sobre">
+            <img src="./css/images/SVG/img-04-sobre.svg" alt="Equipe de suporte">
+          </div>
+          <div class="texto-sobre-mim">
+            <span>
+              Nossa equipe é composta por especialistas e entusiastas da tecnologia, sempre prontos para ajudar e
+              fornecer as melhores recomendações.
+              Estamos empenhados em garantir que você tenha todas as ferramentas necessárias para tomar a decisão certa.
+            </span>
+          </div>
+        </div>
+
+        <div class="bloco-sobre">
+          <div class="texto-sobre-mim">
+            <span>
+              A parceria com ONGs locais também é um pilar importante para nós. Firmamos uma parceria para ajudar os
+              jovens a escolher com exatidão o seu curso na área de tecnologia.
+            </span>
+          </div>
+          <div class="imagem-sobre">
+            <img src="./css/images/SVG/img-05-sobre.svg" alt="Parceria com ONGs">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-team">
+      <div class="corpo-titulo">
+        <span class="equipe">Quem faz o DecidaKi acontecer</span>
+      </div>
+
+      <div class="team-content">
+        <div class="box">
+          <img src="./css/images/Caio-Gabriel.png" alt="cara01">
+          <h3>Caio Gabriel</h3>
+          <h5>Back-end</h5>
+          <div class="icones">
+            <a href="https://www.instagram.com/caiolariel/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/CaioLariel"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/caio-gabriel-fuente-a8a366216/"><i
+                class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="./css/images/Daniel-Filho.png" alt="cara01">
+          <h3>Daniel Filho</h3>
+          <h5>Back-end</h5>
+          <div class="icones">
+            <a href="https://www.instagram.com/d.f.0.l/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/danieldf0l"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/df0l/"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="./css/images/Lucas-Pires.png" alt="cara01">
+          <h3>Lucas Pires</h3>
+          <h5>Analista</h5>
+          <div class="icones">
+            <a href="https://www.instagram.com/oolucas_lpf/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/LucasPires2005"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/lucas-pires-ferraz-0b0649250/"><i
+                class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="./css/images/Marcela-Souza.png" alt="cara01">
+          <h3>Marcela Souza</h3>
+          <h5>Documentação</h5>
+          <div class="icones">
+            <a href="https://www.instagram.com/marcelasra/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/marcelasra"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="./css/images/Pedro-Gustavo.png" alt="cara01">
+          <h3>Pedro Gustavo</h3>
+          <h5>Front-end</h5>
+          <div class="icones">
+            <a href="https://www.instagram.com/pedrogcts/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/pedrogcts"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/pedrogustavotexs/"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="./css/images/Pedro-Roceti.png" alt="cara01">
+          <h3>Pedro Roceti</h3>
+          <h5>Front-end</h5>
+          <div class="icones">
+            <a href="https://www.instagram.com/pache.pr/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/PacheRoceti"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/pedro-roceti-pache-43a49124a/"><i
+                class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="./css/images/Renan-Carriel.png" alt="cara01">
+          <h3>Renan Carriel</h3>
+          <h5>Documentação</h5>
+          <div class="icones">
+            <a href="https://www.instagram.com/renancschweiger_/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/RenanCSchweiger"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+
+  </section>
+
+  <footer>
+    <div id="footer_content">
+      <div id="footer_contacts">
+        <img class="logo2" src="./css/images/Logo.png" alt="">
+        <div id="footer_social_media">
+          <a href="https://www.instagram.com/oolucas_lpf/" class="footer_link" id="instagram" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <ul class="footer_list">
+        <li>
+          <h3>Menu</h3>
+        </li>
+
+        <li>
+          <a href="/Projeto/public/index.html#menu" class="footer_link">Início</a>
+        </li>
+
+        <li>
+          <a href="/Projeto/public/index.html#projetos" class="footer_link">Matrícula</a>
+        </li>
+
+        <li>
+          <a href="/Projeto/public/index.html#sobrenos" class="footer_link">Sobre nós</a>
+        </li>
+      </ul>
+
+      <ul class="footer_list">
+        <li>
+          <h3>Cursos</h3>
+        </li>
+
+        <li>
+          <a href="/Projeto/public/telas/ciencias.html" class="footer_link">Ciências da Computação</a>
+        </li>
+
+        <li>
+          <a href="/Projeto/public/telas/sistemas.html" class="footer_link">Sistemas da Informação</a>
+        </li>
+
+        <li>
+          <a href="/Projeto/public/telas/ads.html" class="footer_link">Análise e Desenvolvimento de Sistemas</a>
+        </li>
+
+        <li>
+          <a href="/Projeto/public/telas/redes.html" class="footer_link">Redes de Computadores</a>
+        </li>
+
+        <li>
+          <a href="/Projeto/public/telas/engenharia.html" class="footer_link">Engenharia da Computação</a>
+        </li>
+      </ul>
+
+      <div id="footer_subscribe">
+        <h3>Cadastre-se</h3>
+        <p>
+          Coloque seu e-mail para receber novas notificações.
+        </p>
+
+        <div id="input_group">
+          <input type="email" id="email" placeholder="Digite seu e-mail">
+          <button>
+            <i class="fa-regular fa-envelope"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer_copyrigth">
+      &#169; 2024 DecidaKi | Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function addDarkmodeWidget() {
+      new Darkmode().showWidget();
+    }
+    window.addEventListener('load', addDarkmodeWidget);
+  </script>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <!-- Chamadas dos Scripts -->
+  <script src="/Projeto/public/css/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+  <script src="/Projeto/public/js/verificaconectado.js"></script>
+  <script src="/Projeto/public/js/mostrarMais.js"></script>
+  <script src="/Projeto/public/js/ajusteFonte.js"></script>
+  <script src="/Projeto/public/js/audioDescricao.js"></script>
+  <script src="/Projeto/public/js/responsividade.js" ></script>
+</body>
+
+</html>

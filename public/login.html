@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="/Projeto/public/css/images/Logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Formulário de Registro -->
+        <div class="content first-content">
+            <div class="first-column">
+                <h2 class="title title-primary">Bem vindo de volta!</h2>
+                <p class="description description-primary">Já tem um cadastro?</p>
+                <p class="description description-primary">Por favor entre com suas credenciais</p>
+                <button id="signin" class="btn btn-primary">Entrar</button>
+            </div>
+            <div class="second-column">
+                <h2 class="title title-second">Criar Conta</h2>
+                <form class="form" id="registerForm">
+                    <label class="label-input" for="registerUsername">
+                        <i class="far fa-user icon-modify"></i>
+                        <input type="text" id="registerUsername" name="username" placeholder="Nome" required>
+                    </label>
+
+                    <label class="label-input" for="registerEmail">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" id="registerEmail" name="email" placeholder="E-mail" required>
+                    </label>
+
+                    <label class="label-input" for="registerPassword">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" id="registerPassword" name="password" placeholder="Senha" required>
+                    </label>
+
+                    <!-- Botão inicialmente desativado -->
+                    <button type="submit" class="btn btn-second" id="registerBtn" disabled>Cadastrar</button>
+                </form>
+            </div>
+            <div class="modal" id="loadingModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <div class="spinner-border" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <p>Aguarde...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Verificação -->
+        <div class="modal" id="verificationModal" tabindex="-1" role="dialog"
+            aria-labelledby="verificationModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="verificationModalLabel">Verificação de E-mail</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Insira o código de verificação enviado para o seu e-mail:</p>
+                        <input type="text" id="verificationCode" class="form-control"
+                            placeholder="Código de verificação" maxlength="4" required>
+                        <div id="verificationMessage" class="mt-2" style="color: green; display: none;"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button id="verifyCodeBtn" class="btn btn-primary">Verificar Código</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content second-content">
+            <div class="first-column">
+                <h2 class="title title-primary">Seja Bem-vindo!</h2>
+                <p class="description description-primary">Não tem um cadastro ainda?</p>
+                <p class="description description-primary">Clique no botão abaixo e crie o seu!</p>
+                <button id="signup" class="btn btn-primary">Cadastrar</button>
+            </div>
+            <div class="second-column">
+                <h2 class="title title-second">Entrar</h2>
+                <form class="form" id="loginForm">
+                    <label class="label-input" for="loginEmail">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" id="loginEmail" name="email" placeholder="E-mail" required>
+                    </label>
+
+                    <label class="label-input" for="loginPassword">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" id="loginPassword" name="password" placeholder="Senha" required>
+                    </label>
+
+                    <a class="password" href="#">Esqueceu a senha?</a>
+                    <button type="submit" class="btn btn-second">Entrar</button>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/Projeto/public/js/autenticacao.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
